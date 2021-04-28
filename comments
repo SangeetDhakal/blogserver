@@ -1,0 +1,6 @@
+express validator for validation
+jsonwebtoken to send web tokens
+expree-jwt to check if the genertaed token in valid or not
+formidable to receive form data
+slugify to make slugs
+string-strip-html to generate meta description

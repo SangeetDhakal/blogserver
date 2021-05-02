@@ -49,7 +49,7 @@ exports.create = (req, res) => {
  
         let blog = new Blog();
         blog.title = fields.title;
-        blog.isdraft=false;
+        blog.draft=false;
         blog.body = fields.body;
         blog.excerpt = fields.excerpt;
         blog.slug = slugify(fields.title).toLowerCase();
@@ -140,7 +140,7 @@ exports.createDraft = (req, res) => {
  
         let blog = new Blog();
         blog.title = fields.title;
-        blog.isdraft=true;
+        blog.draft=true;
         blog.body = fields.body;
         blog.excerpt = fields.excerpt;
         blog.slug = slugify(fields.title).toLowerCase();

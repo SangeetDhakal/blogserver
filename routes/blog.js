@@ -4,6 +4,7 @@ const {
     create,
     createDraft,
     list,
+    sitemap,
     listAllBlogsCategoriesTags,
     read,
     remove,
@@ -23,6 +24,7 @@ const { requireSignin, adminMiddleware, authMiddleware, canUpdateDeleteBlog } = 
 router.post('/blog', requireSignin, adminMiddleware, create);
 router.post('/blog/:slug', requireSignin, adminMiddleware, publish);
 router.get('/blogs', list);
+router.get('/sitemaps', sitemap);
 router.get('/blogsdraft', listDraft);
 router.post('/blogs-categories-tags', listAllBlogsCategoriesTags);
 router.get('/blog/:slug', read);

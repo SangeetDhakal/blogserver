@@ -210,6 +210,19 @@ exports.list = (req, res) => {
             res.json(data);
         });
 };
+
+exports.sitemap = (req, res) => {
+    Blog.find({draft:false})
+        .select('slug updatedAt')
+        .exec((err, data) => {
+            if (err) {
+                return res.json({
+                    error: errorHandler(err)
+                });
+            }
+            res.json(data);
+        });
+};
  
 exports.listDraft = (req, res) => {
     Blog.find({draft:true})

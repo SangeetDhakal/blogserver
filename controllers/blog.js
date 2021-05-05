@@ -249,7 +249,7 @@ exports.listByUser = (req, res) => {
             });
         }
         let userId = user._id;
-        Blog.find({ postedBy: userId })
+        Blog.find({ postedBy: userId, draft:true })
             .populate('categories', '_id name slug')
             .populate('tags', '_id name slug')
             .sort({ createdAt: -1 })
